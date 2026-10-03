@@ -9,12 +9,16 @@ int main(){
     int increments;
 
     for (int i = 0; i < n; i++){
-        increments = 0;
         cin >> a >> b;
-
-        while (a % b != 0){
-            a++;
-            increments++;
+        
+        if (a % b == 0){
+            increments = 0;
+        }
+        else if (a < b){
+            increments = b - a;
+        }
+        else {
+            increments = b - (a % b);
         }
 
         cout << increments << endl;
