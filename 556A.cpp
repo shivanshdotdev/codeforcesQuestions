@@ -31,19 +31,23 @@ int main(){
             }
 
             pos = bookMark + 1;
+            if (pos >= s.length()){
+                break;
+            }
+            
             continue;
         }
 
         bookMark++;
         pos = bookMark + 1;
 
-        if (bookMark >= s.length() - 2){
+        if (pos >= s.length()){
             break;
         }
 
     }
 
-    if (s.length() > 1 && bookMark == 0 && s[bookMark] != s[pos]){
+    if (s.length() > 1 && (bookMark == 0 || bookMark == s.length() - 2) && s[bookMark] != s[pos]){
             s.erase(bookMark, 2);
     }
 
