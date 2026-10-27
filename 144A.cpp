@@ -11,6 +11,9 @@ int main(){
         cin >> arr[i];
     }
 
+    // int arr[] = {10, 10, 58, 31, 63, 40, 76};
+    // int n = 7;
+
     int maxElement = *max_element(arr, arr+n);
     int minElement = *min_element(arr, arr+n);
 
@@ -30,6 +33,13 @@ int main(){
         }
     }
 
-    cout << maxIndex << " " << minIndex << endl;
+    int totalSwaps = maxIndex + (n - minIndex - 1);
+
+    if (minIndex < maxIndex){
+        totalSwaps--;
+    }
+
+    cout << totalSwaps << endl;
+
 
 }
